@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('nim')->unique();
             $table->string('nama', 255);
             $table->string('kelas', 100);
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

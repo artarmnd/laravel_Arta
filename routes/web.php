@@ -20,3 +20,4 @@ Route::get('/mhs-create', function () {
 
 // Simpan data mahasiswa (gunakan POST!)
 Route::post('/mhs-insert', [BelajarController::class, 'saveData'])->name('mhs-insert');
+

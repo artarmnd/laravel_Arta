@@ -26,7 +26,13 @@ class BelajarController extends Controller
             'nim'   => 'required|string|max:20',
             'nama'  => 'required|string|max:100',
             'kelas' => 'required|string|max:10',
+            'foto'  => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
+        if ($request->hasFile('foto')) {
+        $fileName = time() . '.' . $request->foto->extension();
+        $request->foto->move(public_path('uploads/foto'), $fileName);
+        $validated['foto'] = 'uploads/foto/' . $fileName;
+    }
 
         // Simpan data
         MahasiswaModel::create($validated);

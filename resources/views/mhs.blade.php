@@ -21,6 +21,7 @@
         <td>{{ $item->nama }}</td>
         <td>{{ $item->kelas }}</td>
         <td>
+          <a href="{{ route('mhs.show', $item->id) }}" class="btn btn-info btn-sm">Detail</a>
           <a href="{{ route('mhs.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
           <form action="{{ route('mhs.destroy', $item->id) }}" method="POST" style="display:inline;">
               @csrf
